@@ -19,7 +19,7 @@ fn main() {
         .prompt()
         .unwrap();
 
-    println!("\n========= {} Day {} =========", year, day);
+    println!("\n========== {} Day {} ==========", year, day);
     match year {
         2015 => y2015::run(day),
         2025 => y2025::run(day),

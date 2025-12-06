@@ -4,7 +4,7 @@ mod day1;
 
 pub fn run(day: u8) {
     match day {
-        1 => run_day(1, day1::part_1, day1::part_2),
+        1 => run_day(day1::part_1, day1::part_2),
         _ => println!("Day {} not implemented", day),
     }
 }
