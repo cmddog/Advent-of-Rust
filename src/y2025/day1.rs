@@ -1,7 +1,7 @@
 use std::iter;
 
 pub fn part_1() -> usize {
-    let input = include_str!("day1.txt");
+    let input = include_str!("inputs/1.txt");
     input
         .lines()
         .map(|s| s.replace("L", "-").replace("R", "").parse::<i32>().unwrap())
@@ -14,7 +14,7 @@ pub fn part_1() -> usize {
 }
 
 pub fn part_2() -> usize {
-    let input = include_str!("day1.txt");
+    let input = include_str!("inputs/1.txt");
     input
         .lines()
         .map(|s| s.replace("L", "-").replace("R", "").parse::<i32>().unwrap())

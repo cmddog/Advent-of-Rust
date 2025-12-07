@@ -1,21 +1,21 @@
 pub fn part_1() -> i32 {
-    let input = include_str!("day1.txt");
+    let input = include_str!("inputs/1.txt");
     input.chars()
         .map(|c| match c {
             '(' => 1,
             ')' => -1,
-            _ => 0,
+            _ => unreachable!(),
         })
         .sum::<i32>()
 }
 
 pub fn part_2() -> usize {
-    let input = include_str!("day1.txt");
+    let input = include_str!("inputs/1.txt");
     input.chars()
         .map(|c| match c {
             '(' => 1,
             ')' => -1,
-            _ => 0,
+            _ => unreachable!(),
         })
         .scan(0, |state, x| {
             *state += x;
@@ -26,6 +26,6 @@ pub fn part_2() -> usize {
 }
 
 // readFile "i" >>= (print . sum . map f)
-// f str = case str of
+// f = \case
 //  '(' -> 1
 //  ')' -> -1
