@@ -3,6 +3,7 @@ use crate::runner::run_day;
 mod day1;
 mod day2;
 mod day3;
+mod day4;
 mod day5;
 
 pub fn run(day: u8) {
