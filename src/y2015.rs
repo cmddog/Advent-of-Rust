@@ -3,16 +3,22 @@ use crate::runner::run_day;
 mod day1;
 mod day2;
 mod day3;
+mod day4;
+mod day5;
+mod day6;
 
 pub fn run(day: u8) {
     match day {
         1 => run_day(day1::part_1, day1::part_2),
         2 => run_day(day2::part_1, day2::part_2),
         3 => run_day(day3::part_1, day3::part_2),
+        4 => run_day(day4::part_1, day4::part_2),
+        5 => run_day(day5::part_1, day5::part_2),
+        6 => run_day(day6::part_1, day6::part_2),
         _ => println!("Day {} not implemented", day),
     }
 }
 
 pub fn available_days() -> Vec<u8> {
-    vec![1,2,3]
+    vec![1,2,3,4,5,6]
 }

@@ -11,6 +11,7 @@ pub fn run(day: u8) {
         1 => run_day(day1::part_1, day1::part_2),
         2 => run_day(day2::part_1, day2::part_2),
         3 => run_day(day3::part_1, day3::part_2),
+        4 => run_day(day4::part_1, day4::part_2),
         5 => run_day(day5::part_1, day5::part_2),
         _ => println!("Day {} not implemented", day),
     }

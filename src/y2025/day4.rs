@@ -1,6 +1,6 @@
 pub fn part_1() -> u32 {
     let input = include_str!("inputs/4s.txt");
-    let input = format_input(input);
+    let _input = format_input(input);
     
     0
 }
