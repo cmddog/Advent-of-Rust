@@ -1,4 +1,4 @@
-use regex::{Captures, Regex};
+use regex::Regex;
 
 enum Operation {
     On,
@@ -31,9 +31,35 @@ fn parse_input() -> Vec<(Operation, (u32, u32), (u32, u32))> {
 }
 
 pub fn part_1() -> usize {
-    0
+    let mut lamps = vec![[false; 1000]; 1000];
+    let instructions = parse_input();
+    for (operation, (x1, y1), (x2, y2)) in instructions {
+        for x in x1..=x2 {
+            for y in y1..=y2 {
+                lamps[x as usize][y as usize] = match operation {
+                    Operation::On => true,
+                    Operation::Off => false,
+                    Operation::Toggle => !lamps[x as usize][y as usize],
+                }
+            }
+        }
+    }
+    lamps.iter().flatten().filter(|&&b| b).count()
 }
 
 pub fn part_2() -> usize {
-    0
+    let mut lamps: Vec<[usize; 1000]> = vec![[0; 1000]; 1000];
+    let instructions = parse_input();
+    for (operation, (x1, y1), (x2, y2)) in instructions {
+        for x in x1..=x2 {
+            for y in y1..=y2 {
+                lamps[x as usize][y as usize] = match operation {
+                    Operation::On => lamps[x as usize][y as usize] + 1,
+                    Operation::Off => lamps[x as usize][y as usize].saturating_sub(1),
+                    Operation::Toggle => lamps[x as usize][y as usize] + 2,
+                }
+            }
+        }
+    }
+    lamps.iter().flatten().sum()
 }
